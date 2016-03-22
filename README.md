@@ -1,6 +1,10 @@
 # Instafeed
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/instafeed`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem integrates [Instafeed.js](https://github.com/stevenschobert/instafeed.js) with Rails asset pipeline.
+
+## Version
+
+The latest version of Instafeed bundled by this gem is [1.4.1](https://github.com/stevenschobert/instafeed.js/releases)
 
 ## Installation
 
@@ -12,31 +16,39 @@ gem 'instafeed'
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install instafeed
+```bash
+$ gem install instafeed
+```
 
 ## How to use
 
 Include javascript file in app/assets/javascripts/application.js
 
-    //= require instafeed
+```javascript
+//= require instafeed
+```
 
 ## Examples
 
 Here's how easy it is to get all images tagged with **#awesome**:
 
-    <script type="text/javascript">
-      var feed = new Instafeed({
-        get: 'tagged',
-        tagName: 'awesome',
-        clientId: 'YOUR_CLIENT_ID'
-      });
+```javascript
+<script type="text/javascript">
+  var feed = new Instafeed({
+    get: 'tagged',
+    tagName: 'awesome',
+    clientId: 'YOUR_CLIENT_ID'
+  });
 
-      feed.run();
-    </script>
+  feed.run();
+</script>
+```
 
 Instafeed with automatically look for a `<div id="instafeed"></div>` and fill it with linked thumbnails.
 
